@@ -1,0 +1,7 @@
+﻿<Project>
+  <ItemGroup>
+    <None Pack="true" PackagePath="" Include="$(MSBuildThisFileDirectory)\..\packageIcon.png" Visible="false">
+      <Link>packageIcon.png</Link>
+    </None>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,9 @@
+﻿<Project>
+  <PropertyGroup>
+    <Authors>InfinityFlow</Authors>
+    <PackageIcon>packageIcon.png</PackageIcon>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <Copyright>Copyright © InfinityFlow</Copyright>
+  </PropertyGroup>
+</Project>

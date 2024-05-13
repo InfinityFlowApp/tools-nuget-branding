@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="InfinityFlow.Tools.Branding.props"/>
+  <PropertyGroup>
+    <DevelopmentDependency>true</DevelopmentDependency>
+    <Description>Provides default branding properties and assets for organization's NuGet projects.</Description>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <IncludeBuildOutput>false</IncludeBuildOutput>
+    <IsPackable>true</IsPackable>
+    <NoWarn>$(NoWarn);NU5128;CS2008</NoWarn>
+    <Nullable>enable</Nullable>
+    <PackageTags>branding;defaults;icons;nuget;development</PackageTags>
+    <TargetFramework>netstandard2.1</TargetFramework>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- TFM -->
+    <None Pack="true" PackagePath="build" Include="InfinityFlow.Tools.Branding.props" />
+    <None Pack="true" PackagePath="build" Include="InfinityFlow.Tools.Branding.targets" />
+    <!-- TFMs -->
+    <None Pack="true" PackagePath="buildMultiTargeting" Include="InfinityFlow.Tools.Branding.props" />
+    <None Pack="true" PackagePath="buildMultiTargeting" Include="InfinityFlow.Tools.Branding.targets" />
+    <!-- Transitive -->
+    <None Pack="true" PackagePath="buildTransitive" Include="InfinityFlow.Tools.Branding.props" />
+    <None Pack="true" PackagePath="buildTransitive" Include="InfinityFlow.Tools.Branding.targets" />
+    <!-- Assets -->
+    <None Pack="true" PackagePath="" Include="assets/packageIcon.png" />
+    <None Pack="true" PackagePath="" Include="$(SolutionDir)/LICENSE" />
+    <None Pack="true" PackagePath="" Include="$(SolutionDir)/README.md" />
+  </ItemGroup>
+</Project>
