@@ -1,4 +1,9 @@
-# InfinityFlow.Tools.Branding
+# InfinityFlow NuGet Branding
+
+[![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/InfinityFlowApp/tools-nuget-branding/release.yml)](https://github.com/InfinityFlowApp/tools-nuget-branding/actions?query=branch%3Amain)
+[![GitHub Release](https://img.shields.io/github/v/release/InfinityFlowApp/tools-nuget-branding)](https://github.com/InfinityFlowApp/tools-nuget-branding/releases)
+[![GitHub License](https://img.shields.io/github/license/InfinityFlowApp/tools-nuget-branding)](https://github.com/InfinityFlowApp/tools-nuget-branding?tab=MIT-1-ov-file)
+
 A NuGet package that sets the MSBuild properties such as Authors,
 PackageIcon, PackageLicenseFile, PackageReadmeFile, Copyright,
 and puts assets for Package Icon.
@@ -57,9 +62,6 @@ Except the PackageIcon, License and Readme are taken from Solution Root folder, 
 
 ## Contributing
 If you find a bug or have a feature request, please create an issue in the GitHub repository.
-
-To contribute code, fork the repository and submit a pull request.
-Please ensure that your code follows the project's coding standards and is thoroughly tested.
 
 ## License
 This package is released under the MIT License. See the LICENSE file for details.
