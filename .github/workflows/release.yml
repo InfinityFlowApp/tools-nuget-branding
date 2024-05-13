@@ -39,12 +39,12 @@ jobs:
 
       - name: Pack .NET Solution
         run: dotnet pack --configuration Release --no-build --output pack/
-        # if:  ${{ github.event_name == 'release'  && github.ref_type == 'tag' || github.event.release.tag_name }}
+        if: ${{ github.event_name == 'release'  && github.ref_type == 'tag' || github.event.release.tag_name }}
 
       - name: Publish .NET Solution to GitHub Packages
         continue-on-error: true
         run: dotnet nuget push pack/*.nupkg --api-key ${{ secrets.GITHUB_TOKEN }} --source "https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json"
-        if:  ${{ github.event_name == 'release'  && github.ref_type == 'tag' || github.event.release.tag_name }}
+        if: ${{ github.event_name == 'release'  && github.ref_type == 'tag' || github.event.release.tag_name }}
 
       - name: Store .NET Package
         uses: actions/upload-artifact@v4
@@ -53,9 +53,9 @@ jobs:
           if-no-files-found: error
           retention-days: 7
           path: pack/*.nupkg
-        # if:  ${{ github.event_name == 'release'  && github.ref_type == 'tag' || github.event.release.tag_name }}
+        if: ${{ github.event_name == 'release'  && github.ref_type == 'tag' || github.event.release.tag_name }}
 
       - name: Publish .NET Solution to NuGet.org
         continue-on-error: true
         run: dotnet nuget push pack/*.nupkg --api-key ${{ secrets.NUGET_ORG_KEY }} --source nuget
-        if:  ${{ github.event_name == 'release'  && github.ref_type == 'tag' || github.event.release.tag_name }}
+        if: ${{ github.event_name == 'release'  && github.ref_type == 'tag' || github.event.release.tag_name }}
