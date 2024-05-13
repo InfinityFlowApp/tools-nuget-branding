@@ -10,7 +10,15 @@ on:
       - opened
       - reopened
       - synchronize
-  workflow_dispatch: {}
+  workflow_dispatch:
+    inputs:
+      release-type:
+        type: choice
+        default: prerelease
+        description: Release Type
+        options:
+          - release
+          - prerelease
 
 concurrency:
   group: ${{ github.event_name == 'pull_request' && format('pr-{0}', github.event.number) || github.ref }}
@@ -25,5 +33,7 @@ jobs:
     steps:
       - name: "Draft Release"
         uses: release-drafter/release-drafter@v6.0.0
+        with:
+          prerelease: ${{ github.event.inputs.release-type == 'prerelease' }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
