@@ -41,6 +41,7 @@ jobs:
       - name: Determine Version
         uses: gittools/actions/gitversion/execute@v1.1.1
         with:
+          updateAssemblyInfo: true
           useConfigFile: true
 
       - name: Build .NET Solution
@@ -48,7 +49,7 @@ jobs:
 
       - name: Pack .NET Solution
         run: dotnet pack --configuration Release --no-build --output pack/
-        if:  ${{ github.event_name == 'release'  && github.ref_type == 'tag' || github.event.release.tag_name }}
+        # if:  ${{ github.event_name == 'release'  && github.ref_type == 'tag' || github.event.release.tag_name }}
 
       - name: Publish .NET Solution to GitHub Packages
         continue-on-error: true
