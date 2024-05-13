@@ -52,8 +52,8 @@ jobs:
           name: nuget
           if-no-files-found: error
           retention-days: 7
-          path: pack/*.(s?)nupkg
-        if:  ${{ github.event_name == 'release'  && github.ref_type == 'tag' || github.event.release.tag_name }}
+          path: pack/*.nupkg
+        # if:  ${{ github.event_name == 'release'  && github.ref_type == 'tag' || github.event.release.tag_name }}
 
       - name: Publish .NET Solution to NuGet.org
         continue-on-error: true
