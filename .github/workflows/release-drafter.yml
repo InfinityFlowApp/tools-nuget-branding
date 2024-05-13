@@ -34,6 +34,6 @@ jobs:
       - name: "Draft Release"
         uses: release-drafter/release-drafter@v6.0.0
         with:
-          prerelease: ${{ github.event.inputs.release-type == 'prerelease' }}
+          prerelease: ${{ github.event.inputs.release-type != 'release' }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
