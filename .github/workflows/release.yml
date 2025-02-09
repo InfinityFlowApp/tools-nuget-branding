@@ -26,7 +26,7 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Setup .NET Core SDK 8
+      - name: Setup .NET
         uses: actions/setup-dotnet@v4
         
       - name: Restore .NET Packages
