@@ -4,3 +4,10 @@ updates:
     directory: "/"
     schedule:
       interval: "daily"
+  - package-ecosystem: "nuget" # See documentation for possible values
+    directory: "/" # Location of package manifests
+    schedule:
+      interval: "daily"
+    labels:
+      - "dependencies"
+    open-pull-requests-limit: 10
