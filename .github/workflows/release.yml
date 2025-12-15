@@ -45,7 +45,7 @@ jobs:
         if: ${{ github.event_name == 'release'  && github.ref_type == 'tag' || github.event.release.tag_name }}
 
       - name: Store .NET Package
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: nuget
           if-no-files-found: error
